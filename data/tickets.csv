@@ -1,0 +1,91 @@
+﻿ticket_id,customer_name,issue,status,priority
+T1001,Rahul,Received damaged product,Open,High
+T1002,Priya,Wrong item delivered,In Progress,High
+T1003,Amit,Late delivery,Resolved,Medium
+T1004,Sita,Payment failed but money deducted,Open,High
+T1005,Vikram,Unable to track order,In Progress,Low
+T1006,Neha,Product not as described,Open,Medium
+T1007,Raj,Refund not received,Open,High
+T1008,Anjali,Need to change shipping address,In Progress,Medium
+T1009,Suresh,Cancel order,Resolved,Medium
+T1010,Kavita,Warranty claim,Open,High
+T1011,Deepak,Return pickup not scheduled,In Progress,Medium
+T1012,Meera,Coupon not applying,Resolved,Low
+T1013,Rohit,Missing item in package,Open,High
+T1014,Lata,How to return a gift,Closed,Low
+T1015,Arjun,Product arrived after return window,Open,Medium
+T1016,Sunita,Exchange for different size,In Progress,Medium
+T1017,Manoj,Duplicate charge on card,Open,High
+T1018,Kiran,Received expired product,In Progress,High
+T1019,Vijay,Cannot login to account,Resolved,Medium
+T1020,Rekha,How to use wallet balance,Closed,Low
+T1021,Pankaj,Order status not updating,Open,Medium
+T1022,Divya,Wrong colour delivered,In Progress,Medium
+T1023,Ashok,Defective part – warranty,Open,High
+T1024,Anita,Request cancellation before shipment,Resolved,Medium
+T1025,Gaurav,Delivery attempted but no one home,Open,Low
+T1026,Nandini,Refund for returned item not processed,In Progress,High
+T1027,Prakash,Invoice missing GST number,Open,Medium
+T1028,Ritu,How to track replacement,Resolved,Low
+T1029,Sandeep,Product stopped working after 2 weeks,Open,High
+T1030,Shweta,Incorrect price charged,In Progress,Medium
+T1031,Alok,Need copy of invoice,Closed,Low
+T1032,Bhavna,Late refund,Open,High
+T1033,Chetan,Could not apply promo code,Resolved,Low
+T1034,Deepti,Change payment method after order,Open,Medium
+T1035,Esha,Item not delivered but marked delivered,In Progress,High
+T1036,Farhan,Received duplicate product,Open,Medium
+T1037,Geeta,How to get replacement under warranty,In Progress,High
+T1038,Harsh,Return request rejected,Open,Medium
+T1039,Isha,Exchange for colour,Resolved,Low
+T1040,Jay,Product missing accessories,In Progress,High
+T1041,Komal,Complaint about courier behaviour,Open,Medium
+T1042,Lalit,How to cancel subscription,Closed,Low
+T1043,Maya,Defective screen on arrival,Open,High
+T1044,Nitin,Refund amount is less than expected,In Progress,Medium
+T1045,Ojas,Unable to add new address,Open,Medium
+T1046,Pooja,Gift card balance not updated,Resolved,Low
+T1047,Qasim,Order not confirmed but money deducted,Open,High
+T1048,Rashmi,Size chart wrong,Open,Low
+T1049,Sahil,Received wrong accessory,In Progress,Medium
+T1050,Tara,How to return a personalised item,Resolved,Low
+T1051,Uday,Order split into multiple shipments issue,Open,Medium
+T1052,Vani,Courier asking for extra charges,Open,High
+T1053,Wasim,Need help with assembly,In Progress,Low
+T1054,Xavier,Return window extension request,Open,Medium
+T1055,Yash,Double order placed by mistake,Resolved,Medium
+T1056,Zara,Received empty box,Open,High
+T1057,Rahul,Can't track with provided ID,In Progress,Medium
+T1058,Priya,Product box damaged but product ok,Closed,Low
+T1059,Amit,Exchange not collected on scheduled date,Open,Medium
+T1060,Sita,Missing free gift,In Progress,Low
+T1061,Vikram,Late delivery – compensation request,Open,Medium
+T1062,Neha,Wrong variant delivered,Open,High
+T1063,Raj,How to unsubscribe from emails,Resolved,Low
+T1064,Anjali,Refund status stuck on pending,In Progress,High
+T1065,Suresh,Request to hold delivery,Open,Medium
+T1066,Kavita,Product not compatible,Open,Medium
+T1067,Deepak,Account blocked after too many attempts,In Progress,High
+T1068,Meera,How to use no-cost EMI,Closed,Low
+T1069,Rohit,Exchange item out of stock,Open,Medium
+T1070,Lata,Received wrong quantity,Open,High
+T1071,Arjun,Change delivery date,In Progress,Low
+T1072,Sunita,Payment refunded to wrong account,Open,High
+T1073,Manoj,Defective charger,Open,Medium
+T1074,Kiran,Update phone number on order,Resolved,Low
+T1075,Vijay,Product seal broken,In Progress,High
+T1076,Rekha,How to schedule pickup,Closed,Low
+T1077,Pankaj,Cancellation request for shipped item,Open,High
+T1078,Divya,Customer support unresponsive,Open,Medium
+T1079,Ashok,Incorrect tracking link,Resolved,Low
+T1080,Anita,Return pickup failed twice,Open,High
+T1081,Gaurav,How to exchange for different product,In Progress,Medium
+T1082,Nandini,Missing invoice,Closed,Low
+T1083,Prakash,Price drop after purchase,Open,Low
+T1084,Ritu,Received used product,Open,High
+T1085,Sandeep,Account details not updating,In Progress,Medium
+T1086,Shweta,How to check warranty status,Resolved,Low
+T1087,Alok,Item broken during transit,Open,High
+T1088,Bhavna,Wrong PIN code serviceability shown,Open,Medium
+T1089,Chetan,Request for gift wrapping,In Progress,Low
+T1090,Deepti,Refund not showing in bank after 10 days,Open,High

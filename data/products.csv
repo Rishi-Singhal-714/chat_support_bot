@@ -1,0 +1,101 @@
+﻿product_id,name,price,stock,category
+P001,Wireless Headphones,2999,42,Electronics
+P002,Smart Watch,4999,15,Wearables
+P003,Running Shoes,2499,78,Footwear
+P004,Cotton T-Shirt,599,200,Clothing
+P005,Bluetooth Speaker,1499,33,Electronics
+P006,Laptop Sleeve,799,55,Accessories
+P007,Yoga Mat,999,120,Sports
+P008,USB-C Cable,349,500,Electronics
+P009,Coffee Mug,449,95,Home & Kitchen
+P010,Backpack,1799,40,Accessories
+P011,Face Cream,649,88,Beauty
+P012,LED Desk Lamp,1199,30,Home & Kitchen
+P013,Sunglasses,1199,60,Accessories
+P014,Sneakers,3299,22,Footwear
+P015,Notebook Set,299,150,Stationery
+P016,Power Bank 10000mAh,1199,37,Electronics
+P017,Earphones Wired,599,110,Electronics
+P018,Tablet Stand,699,28,Accessories
+P019,Denim Jeans,1799,45,Clothing
+P020,Saree,2499,12,Clothing
+P021,Watch Strap,399,300,Accessories
+P022,Microwave Oven,6999,8,Home Appliances
+P023,Electric Kettle,999,70,Home Appliances
+P024,Water Bottle,499,200,Home & Kitchen
+P025,Protein Powder,1999,25,Health
+P026,Resistance Bands,749,90,Sports
+P027,Desk Organiser,549,65,Stationery
+P028,Wall Clock,899,18,Home Decor
+P029,Table Lamp,849,44,Home Decor
+P030,Jigsaw Puzzle 1000pc,699,33,Toys
+P031,Board Game,1199,27,Toys
+P032,Wireless Mouse,599,80,Electronics
+P033,Webcam HD,1499,19,Electronics
+P034,Screen Protector,199,500,Accessories
+P035,Phone Case,399,130,Accessories
+P036,Wallet,749,36,Accessories
+P037,Belt,549,52,Accessories
+P038,Handbag,2299,14,Accessories
+P039,Perfume 50ml,1499,20,Beauty
+P040,Nail Polish Set,449,85,Beauty
+P041,Lipstick,399,150,Beauty
+P042,Shampoo,349,200,Beauty
+P043,Conditioner,379,190,Beauty
+P044,Toothbrush Electric,999,40,Health
+P045,First Aid Kit,649,55,Health
+P046,Cookware Set,4999,10,Home & Kitchen
+P047,Casserole,1599,16,Home & Kitchen
+P048,Kitchen Knife Set,1299,23,Home & Kitchen
+P049,Bedsheet Cotton,899,70,Home Decor
+P050,Pillow Set of 2,1199,48,Home Decor
+P051,Curtains,1399,31,Home Decor
+P052,Ceiling Light,2199,9,Home Decor
+P053,Door Mat,599,66,Home & Kitchen
+P054,Storage Bins,749,38,Home & Kitchen
+P055,Indoor Plant,549,25,Garden
+P056,Gardening Tools,899,17,Garden
+P057,Hula Hoop,399,82,Sports
+P058,Skipping Rope,299,120,Sports
+P059,Dumbbell Set 5kg,1499,14,Sports
+P060,Treadmill,25999,3,Sports
+P061,Novel,299,200,Books
+P062,Cookbook,449,95,Books
+P063,Children's Story Book,199,300,Books
+P064,Sketch Pens,249,150,Stationery
+P065,Sticky Notes,149,500,Stationery
+P066,Desk Calendar,349,70,Stationery
+P067,Pencil Box,199,200,Stationery
+P068,Bath Towel,699,42,Home & Kitchen
+P069,Soap Dispenser,399,88,Bathroom
+P070,Shower Curtain,799,34,Bathroom
+P071,Laundry Basket,649,27,Home & Kitchen
+P072,Iron Box,1199,21,Home Appliances
+P073,Hair Dryer,899,45,Beauty
+P074,Trimmer,1299,33,Personal Care
+P075,Shaving Kit,749,50,Personal Care
+P076,Deodorant,299,180,Beauty
+P077,Body Lotion,449,110,Beauty
+P078,Sunscreen,599,75,Beauty
+P079,Sunglasses Case,249,200,Accessories
+P080,Keychain,149,400,Accessories
+P081,Car Phone Holder,499,55,Auto
+P082,Car Charger,349,80,Auto
+P083,Air Freshener,249,130,Auto
+P084,Baby Wipes,199,250,Baby
+P085,Baby Diapers Pack,899,60,Baby
+P086,Pet Toy,299,90,Pet Supplies
+P087,Dog Leash,449,44,Pet Supplies
+P088,Cat Food 3kg,999,28,Pet Supplies
+P089,Fish Tank,2499,5,Pet Supplies
+P090,Office Chair,7999,7,Furniture
+P091,Study Table,4999,11,Furniture
+P092,Book Shelf,3999,6,Furniture
+P093,Memory Foam Pillow,1499,35,Home Decor
+P094,Sleep Mask,299,115,Travel
+P095,Travel Neck Pillow,599,42,Travel
+P096,Luggage Tag,249,200,Travel
+P097,Compression Socks,499,90,Health
+P098,Multivitamin Tablets,699,80,Health
+P099,Hand Sanitizer,99,1000,Health
+P100,Disinfectant Spray,299,350,Health
