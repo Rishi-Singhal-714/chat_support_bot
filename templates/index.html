@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 420px;
+            max-width: 95vw;
+            height: 85vh;
+            max-height: 700px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-icon {
+            font-size: 1.3rem;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .messages::-webkit-scrollbar { width: 5px; }
+        .messages::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            max-width: 80%;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            align-items: flex-start;
+        }
+
+        .bubble {
+            padding: 10px 14px;
+            border-radius: 16px;
+            line-height: 1.45;
+            word-break: break-word;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+        }
+
+        .user .bubble {
+            background: #2563eb;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bot .bubble {
+            background: #e9ecef;
+            color: #212529;
+            border-bottom-left-radius: 4px;
+        }
+
+        .time {
+            font-size: 0.65rem;
+            color: #868e96;
+            margin-top: 3px;
+            padding: 0 4px;
+        }
+
+        .json-toggle {
+            font-size: 0.72rem;
+            color: #6c757d;
+            cursor: pointer;
+            margin-top: 4px;
+            text-decoration: underline;
+            user-select: none;
+        }
+
+        .json-data {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-top: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            white-space: pre-wrap;
+            display: none;
+            max-height: 140px;
+            overflow-y: auto;
+            color: #495057;
+        }
+
+        .input-area {
+            display: flex;
+            padding: 12px 14px;
+            background: #fff;
+            border-top: 1px solid #e9ecef;
+            gap: 8px;
+        }
+
+        .input-area input {
+            flex: 1;
+            border: 1px solid #ced4da;
+            border-radius: 20px;
+            padding: 9px 16px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border 0.15s;
+            font-family: inherit;
+        }
+
+        .input-area input:focus {
+            border-color: #2563eb;
+        }
+
+        .input-area input::placeholder {
+            color: #adb5bd;
+        }
+
+        .input-area button {
+            background: #2563eb;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-area button:hover {
+            background: #1d4ed8;
+        }
+
+        .input-area button:active {
+            background: #1e40af;
+        }
+
+        .typing {
+            display: none;
+            align-self: flex-start;
+            background: #e9ecef;
+            padding: 12px 16px;
+            border-radius: 16px;
+            border-bottom-left-radius: 4px;
+            margin-bottom: 4px;
+        }
+
+        .typing.active { display: flex; }
+
+        .typing span {
+            width: 6px;
+            height: 6px;
+            background: #868e96;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .typing span:nth-child(2) { animation-delay: 0.15s; }
+        .typing span:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+
+        .welcome h3 {
+            color: #343a40;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .welcome p {
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .suggestion {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 0.82rem;
+            color: #495057;
+            cursor: pointer;
+            display: inline-block;
+            margin: 4px;
+            transition: all 0.15s;
+        }
+
+        .suggestion:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+                width: 100vw;
+                height: 100vh;
+                max-width: 100vw;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+            body { padding: 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <span class="header-icon">💬</span>
+            <span>Support Chat</span>
+        </div>
+
+        <div class="messages" id="messages">
+            <div class="welcome" id="welcome">
+                <h3>Welcome to Support</h3>
+                <p>How can we help you today?</p>
+                <div>
+                    <span class="suggestion" onclick="sendQuick('What are your hours?')">What are your hours?</span>
+                    <span class="suggestion" onclick="sendQuick('Track my order')">Track my order</span>
+                    <span class="suggestion" onclick="sendQuick('Reset password')">Reset password</span>
+                    <span class="suggestion" onclick="sendQuick('Talk to agent')">Talk to agent</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="typing" id="typing">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type a message..." autofocus>
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        const messagesDiv = document.getElementById('messages');
+        const input = document.getElementById('userInput');
+        const typing = document.getElementById('typing');
+        const welcome = document.getElementById('welcome');
+
+        function formatTime() {
+            return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function addMessage(text, isUser, jsonData = null) {
+            if (welcome && welcome.style.display !== 'none') {
+                welcome.style.display = 'none';
+            }
+
+            const msg = document.createElement('div');
+            msg.className = 'message ' + (isUser ? 'user' : 'bot');
+
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            const time = document.createElement('div');
+            time.className = 'time';
+            time.textContent = formatTime();
+
+            msg.appendChild(bubble);
+            msg.appendChild(time);
+
+            if (jsonData && !isUser) {
+                const toggle = document.createElement('div');
+                toggle.className = 'json-toggle';
+                toggle.textContent = 'Show details';
+                const jsonDiv = document.createElement('div');
+                jsonDiv.className = 'json-data';
+                jsonDiv.textContent = JSON.stringify(jsonData, null, 2);
+                toggle.onclick = () => {
+                    const show = jsonDiv.style.display === 'none' || jsonDiv.style.display === '';
+                    jsonDiv.style.display = show ? 'block' : 'none';
+                    toggle.textContent = show ? 'Hide details' : 'Show details';
+                };
+                msg.appendChild(toggle);
+                msg.appendChild(jsonDiv);
+            }
+
+            messagesDiv.appendChild(msg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTyping() {
+            typing.classList.add('active');
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function hideTyping() {
+            typing.classList.remove('active');
+        }
+
+        function sendQuick(text) {
+            input.value = text;
+            sendMessage();
+        }
+
+        async function sendMessage() {
+            const query = input.value.trim();
+            if (!query) return;
+
+            addMessage(query, true);
+            input.value = '';
+
+            showTyping();
+
+            try {
+                const res = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_query: query })
+                });
+
+                await new Promise(r => setTimeout(r, 500));
+
+                const data = await res.json();
+                hideTyping();
+
+                if (data.error) {
+                    addMessage('Error: ' + data.error, false);
+                } else {
+                    addMessage(data.response, false, {
+                        intent: data.intent,
+                        confidence: data.confidence,
+                        action: data.action_taken
+                    });
+                }
+            } catch (e) {
+                await new Promise(r => setTimeout(r, 500));
+                hideTyping();
+                addMessage('Network error. Please try again.', false);
+            }
+        }
+
+        input.addEventListener('keypress', e => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
